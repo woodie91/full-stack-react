@@ -9,7 +9,7 @@ const Content = ({ parts }) =>
   <>
   {
     parts.map(part => 
-      <Part part = {part} />
+      <Part key = {part.id} part={part} />
       )
   }
   </>
@@ -34,8 +34,9 @@ const App = () => {
         name: 'State of a component',
         exercises: 14,
         id: 3
-      }
-    ]
+        }
+       
+      ]
   }
   
 
@@ -45,11 +46,15 @@ const App = () => {
   }, 0)
 
   const Course = ({course}) => {
+    
     return (
       <div>
-        <Header course = {course.name}/>
+      
+      <Header course = {course.name}/>
         <Content parts = {course.parts}/>
-        <b>Total of {total} exercises</b>
+        <b>Total of {total} exercises</b> 
+          
+    
       </div>
     )
   }
